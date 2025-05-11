@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
+import Header from "./components/Header";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <SearchBar
         value={searchQuery}
         onChange={setSearchQuery}
