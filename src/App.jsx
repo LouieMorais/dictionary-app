@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
 import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
+import DefinitionDisplay from "./components/DefinitionDisplay";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,8 +31,7 @@ function App() {
         onChange={setSearchQuery}
         onSubmit={handleSearch}
       />
-      {searchResult && <p>Definition: {searchResult}</p>}
-      {searchError && <p style={{ color: "red" }}>{searchError}</p>}
+      <DefinitionDisplay result={searchResult} error={searchError} />
     </div>
   );
 }
